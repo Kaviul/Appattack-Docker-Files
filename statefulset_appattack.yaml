@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+
+kind: Deployment
+
+metadata:
+  name: appattack-web-deployment
+
+  labels:
+    app: node-18
+
+spec:
+  replicas: 2
+
+  selector:
+    matchLabels:
+      app: node-18
+
+  template:
+    metadata:
+      labels:
+        app: node-18
+
+    spec:
+      containers:
+        - name: appattack-web
+
+          image: website-image
+
+          ports:
+            - containerPort: 8080

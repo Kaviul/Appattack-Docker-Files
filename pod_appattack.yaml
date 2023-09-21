@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: appattack-web-pod
+spec:
+  containers:
+    - name: appattack-web
+      image: website-image
+      ports:
+        - containerPort: 8080
